@@ -1,0 +1,391 @@
+@charset "UTF-8";
+
+header{
+    background-color: #262b2b;
+    margin: -16px -7.7px 0;
+}
+header p{
+    color: white;
+    margin-left: 40px;
+}
+header div.address i{
+    padding-top: 15px;
+    float: left;
+} 
+header div.address{   
+    border-bottom: thin solid white;
+}
+header div.address div.contact{
+    float: right;
+}
+header div a i:hover{
+    font-size: x-large;
+}
+div.address{
+    padding-top: 5px;
+}
+div.logo{
+    height: 130px;
+    border-bottom: thin solid white;
+}
+div.logo img{
+    float: left;
+    margin-top: 1px;
+    margin-left: 40px;
+}
+div.logo button{
+    margin-left: -4.5px;
+    height: 40px;
+    width: 50px;
+}
+div.logo form input{
+    height: 40px;
+    width: 400px;
+}
+div.logo form{
+    float: right;
+    margin-top: 40px;
+    margin-right: 400px;
+}
+nav.section{
+    background-color: #262b2b;
+    margin: -15.5px -7.7px;
+}
+nav.section ul li a{
+    text-decoration: none;
+    color: white;
+    clear: both;
+}
+nav.section ul li{
+    float: left;
+    width: 17%;
+    height: 40px;
+    background-color: #262b2b;
+    text-align: center;
+    line-height: 60px;
+    list-style: none;
+
+}
+nav.section ul{
+    margin-left: 20%;
+    height: 60px;
+}
+nav.section ul li a:hover{
+    text-decoration: underline;
+    color: #e58d3a;
+    font-weight: bold;
+    -webkit-transition: color 0.5s linear;  
+}
+article img{
+    float: left;
+    margin: 40px auto auto 30px ;
+}
+article ul li{
+    list-style: none;
+}
+footer{
+    background-color: #262b2b;
+    float: inline-start;
+    height: 350px;
+    clear: both;
+    width: 100%;
+}
+div.ttlh{
+    width: 25%;
+    float: left;
+}
+div.ttlh p{
+    margin-left: 5px;
+}
+footer p{
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+}
+footer i{
+    float: left;
+    margin-right: 4px;
+}
+footer ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+footer ul li {
+    list-style: none;
+    margin-bottom: 20px;
+}
+footer ul li a:hover{
+    text-decoration: underline;
+}
+div.lk{
+    width: 25%;
+    float: left;
+}
+div.lk p{
+    margin-left: 35px;
+}
+div.ht{
+    width: 25%;
+    float: left;
+}
+div.ht p{
+    margin-left: 38px;
+} 
+div.tudt{
+    width: 25%;
+    float: left;
+}
+div.tudt li a i{
+    margin-right: 40px;
+}
+body#trang-chu .trang-chu, body#chitietgoitap .chitietgoitap, body#dangkyloptap .dangkyloptap, body#giaodich .giaodich, body#goitap .goitap, body#lichtap .lichtap, body#thietbi .thietbi, body#khachhang .khachhang, body#nhanvien .nhanvien{
+    text-decoration: underline;
+    color: #e58d3a;
+    font-weight: bold;
+}
+nav.nav-left{
+    float: left;
+    width: 20%;
+}
+section.section{
+    float: right;
+    width: 80%;
+}
+div.back-home a{
+    text-decoration: none;
+    font-size: x-large;
+    color: rgb(136, 196, 196);
+}
+div.back-home{
+    margin: 60px 40px 40px;
+
+}
+nav.nav-left div{
+    border: thin solid black;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+nav.nav-left ul li{
+    margin-top: -40px;
+    width: 10%;
+    float: left;
+}
+nav.nav-left p{
+    width: 10%;
+}
+div.more-if{
+    clear: both;
+    background-color: #e9f5f5;
+}
+div.more-if p{
+    margin: auto 8rem auto;
+}
+h3{
+    text-align: center;
+}
+.navbar {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #333;
+            margin: 0 -8px 0 -8px;
+        }
+        .navbar a {
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 20px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .customer-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.customer-card {
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.customer-name {
+    margin-bottom: 10px;
+}
+
+.customer-info span {
+    font-weight: bold;
+}
+.employee-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.employee-card {
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.employee-name {
+    margin-bottom: 10px;
+}
+
+.employee-info span {
+    font-weight: bold;
+}
+.transaction-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.transaction-card {
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.customer-name {
+    margin-bottom: 10px;
+}
+
+.transaction-info span {
+    font-weight: bold;
+}
+.registration-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.registration-card {
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.customer-name {
+    margin-bottom: 10px;
+}
+
+.class-info span {
+    font-weight: bold;
+}
+.package-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.package-card {
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.customer-name {
+    margin-bottom: 10px;
+}
+
+.package-info span {
+    font-weight: bold;
+}
+.equipment-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.equipment-card {
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.equipment-name {
+    margin-bottom: 10px;
+}
+
+.equipment-img {
+    width: 100%;
+    height: auto;
+}
+
+.equipment-info span {
+    font-weight: bold;
+}
+.schedule-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.schedule-card {
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.class-name {
+    margin-bottom: 10px;
+}
+
+.class-img {
+    width: 100%;
+    height: auto;
+}
+
+.class-info span {
+    font-weight: bold;
+}
+.package-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.package-card {
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.package-name {
+    margin-bottom: 10px;
+}
+
+.package-img {
+    width: 100%;
+    height: auto;
+}
+
+.package-description {
+    margin-bottom: 10px;
+}
+
+.package-price span {
+    font-weight: bold;
+}
