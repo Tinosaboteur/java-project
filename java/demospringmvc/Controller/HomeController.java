@@ -3,6 +3,7 @@ package demospringmvc.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,22 +29,17 @@ public class HomeController {
 	@RequestMapping(value = "/giaodich")
 	public ModelAndView giaodich() {
 		ModelAndView mv = new ModelAndView("admin/giaodich");
-		mv.addObject("giaodich", HomeService.GetDatagiaodich());
+		mv.addObject("goitap", HomeService.GetDatagoitap());
 		mv.addObject("khachhang", HomeService.GetDatakhachhang());
+		mv.addObject("chitietgoitap", HomeService.GetDatachitietgoitap());
 		return mv;
 	}	
-	@RequestMapping(value = "/admin/giaodich/add")
-	public ModelAndView addgd() {
-	    ModelAndView mv = new ModelAndView("admin/giaodich/add");
-	    mv.addObject("khachhang", HomeService.GetDatakhachhang());
-	    mv.addObject("goitap", HomeService.GetDatagoitap());
-	    return mv;
-	}
 	@RequestMapping(value = "/admin/giaodich/detail")
 	public ModelAndView detailgd() {
 	    ModelAndView mv = new ModelAndView("admin/giaodich/detail");
-	    mv.addObject("giaodich", HomeService.GetDatagiaodich());
-	    mv.addObject("khachhang", HomeService.GetDatakhachhang());
+	    mv.addObject("chitietgoitap", HomeService.GetDatachitietgoitap());
+		mv.addObject("khachhang", HomeService.GetDatakhachhang());
+		mv.addObject("goitap", HomeService.GetDatagoitap());
 	    return mv;
 	}
 	//nhanvien

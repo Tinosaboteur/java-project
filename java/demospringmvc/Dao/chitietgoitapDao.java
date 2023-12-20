@@ -40,4 +40,11 @@ public class chitietgoitapDao {
         List<chitietgoitap> ctgts = jdbcTemplate.query(sql, new Mapperchitietgoitap(), id);
         return ctgts.isEmpty() ? null : ctgts.get(0);
     }
+    
+    public List<chitietgoitap> findChitietgoitapByMonth(int month) {
+        String sql = "SELECT * FROM chitietgoitap WHERE MONTH(StartDate) = ?";
+        List<chitietgoitap> ctgts = jdbcTemplate.query(sql, new Mapperchitietgoitap(), month);
+        return ctgts;
+    }
+
 }

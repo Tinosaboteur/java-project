@@ -39,10 +39,10 @@ public class nhanvienDao {
         jdbcTemplate.update(sql, id);
     }
 
-    public nhanvien findNhanvien(int id) {
-        String sql = "SELECT * FROM nhanvien WHERE EmployeeID = ?";
-        List<nhanvien> tbs = jdbcTemplate.query(sql, new Mappernhanvien(), id);
-        return tbs.isEmpty() ? null : tbs.get(0);
+    public List<nhanvien> findNhanvien(String name) {
+        String sql = "SELECT * FROM nhanvien WHERE name = ?";
+        List<nhanvien> tbs = jdbcTemplate.query(sql, new Mappernhanvien(), name);
+        return tbs;
     }
 }
 

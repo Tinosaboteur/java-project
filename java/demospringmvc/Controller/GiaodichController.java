@@ -1,6 +1,9 @@
 package demospringmvc.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import demospringmvc.Entity.giaodich;
+import demospringmvc.Entity.chitietgoitap;
 import demospringmvc.service.IHomeService;
 
 @Controller
@@ -16,18 +19,13 @@ public class GiaodichController {
 	@Autowired
     private IHomeService homeService;
 
-    @RequestMapping(value = "/giaodich/add", method = RequestMethod.POST)
-    public ModelAndView addGiaodich(@ModelAttribute("giaodich") giaodich gd) {
-        homeService.addGiaodich(gd);
-        return new ModelAndView("redirect:/giaodich");
-    }
-
     @RequestMapping(value = "/giaodich/find", method = RequestMethod.GET)
-    public ModelAndView findGiaodich(@RequestParam("transactionID") int transactionID) {
-    	giaodich gd = homeService.findGiaodich(transactionID);
+    public ModelAndView findChitietgoitapByMonth(@RequestParam("startDate") int startDate) {
+    	List<chitietgoitap> ctgt = homeService.findChitietgoitapByMonth(startDate);
         ModelAndView mav = new ModelAndView("admin/giaodich/detail");
         mav.addObject("khachhang", homeService.GetDatakhachhang());
-        mav.addObject("giaodich", gd);
+		mav.addObject("goitap", homeService.GetDatagoitap());
+        mav.addObject("chitietgoitap", ctgt);
         return mav;
     }
 }

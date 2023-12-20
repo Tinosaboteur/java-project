@@ -34,9 +34,10 @@ public class khachhangDao {
         return kh;
     }
 
-    public khachhang findKhachhang(int id) {
-        String sql = "SELECT * FROM khachhang WHERE CustomerID = ?";
-        List<khachhang> tbs = jdbcTemplate.query(sql, new Mapperkhachhang(), id);
-        return tbs.isEmpty() ? null : tbs.get(0);
+    public List<khachhang> findKhachhang(String name) {
+        String sql = "SELECT * FROM khachhang WHERE name = ?";
+        List<khachhang> tbs = jdbcTemplate.query(sql, new Mapperkhachhang(), name);
+        return tbs;
     }
+
 }

@@ -1,5 +1,7 @@
 package demospringmvc.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,8 +37,8 @@ public class NhanvienCotroller {
     }
 
     @RequestMapping(value = "/nhanvien/find", method = RequestMethod.GET)
-    public ModelAndView findNhanvien(@RequestParam("employeeID") int employeeID) {
-    	nhanvien nv = homeService.findNhanvien(employeeID);
+    public ModelAndView findNhanvien(@RequestParam("name") String name) {
+    	List<nhanvien> nv = homeService.findNhanvien(name);
         ModelAndView mav = new ModelAndView("admin/nhanvien/detail");
         mav.addObject("nhanvien", nv);
         return mav;

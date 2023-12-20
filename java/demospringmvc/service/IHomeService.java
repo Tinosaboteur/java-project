@@ -2,6 +2,8 @@ package demospringmvc.service;
 
 import java.util.List;
 
+
+
 import demospringmvc.Entity.goitap;
 import demospringmvc.Entity.thietbi;
 import demospringmvc.Entity.user;
@@ -9,7 +11,6 @@ import demospringmvc.Entity.lichtap;
 import demospringmvc.Entity.nhanvien;
 import demospringmvc.Entity.chitietgoitap;
 import demospringmvc.Entity.dangkiloptap;
-import demospringmvc.Entity.giaodich;
 import demospringmvc.Entity.khachhang;
 
 public interface IHomeService {
@@ -28,27 +29,25 @@ public interface IHomeService {
     public nhanvien addNhanvien(nhanvien nv);
     public nhanvien updateNhanvien(nhanvien nv);
     public void deleteNhanvien(int id);
-    public nhanvien findNhanvien(int id);
+    public List<nhanvien> findNhanvien(String name);
 	//chitietgoitap
 	public List<chitietgoitap> GetDatachitietgoitap();
     public chitietgoitap addChitietgoitap(chitietgoitap ctgt);
     public chitietgoitap updateChitietgoitap(chitietgoitap ctgt);
     public chitietgoitap findChitietgoitap(int id);
+    public List<chitietgoitap> findChitietgoitapByMonth(int month);
 	//dangkiloptap
 	public List<dangkiloptap> GetDatadangkiloptap();
     public dangkiloptap addDangkiloptap(dangkiloptap dklt);
     public dangkiloptap updateDangkiloptap(dangkiloptap dklt);
     public void deleteDangkiloptap(int id);
     public dangkiloptap findDangkiloptap(int id);
-	//giaodich
-	public List<giaodich> GetDatagiaodich();
-    public giaodich addGiaodich(giaodich gd);
-    public giaodich findGiaodich(int id);
+	
 	//khachhang
 	public List<khachhang> GetDatakhachhang();
     public khachhang addKhachhang(khachhang kh);
     public khachhang updateKhachhang(khachhang kh);
-    public khachhang findKhachhang(int id);
+    public List<khachhang> findKhachhang(String name);
 	//user
 	public List<user> GetDatauser();
     public user signIn(String username, String password);

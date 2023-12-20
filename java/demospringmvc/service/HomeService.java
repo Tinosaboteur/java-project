@@ -2,6 +2,8 @@ package demospringmvc.service;
 
 import java.util.List;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +13,6 @@ import demospringmvc.Dao.thietbiDao;
 import demospringmvc.Dao.lichtapDao;
 import demospringmvc.Dao.chitietgoitapDao;
 import demospringmvc.Dao.dangkiloptapDao;
-import demospringmvc.Dao.giaodichDao;
 import demospringmvc.Dao.khachhangDao;
 import demospringmvc.Dao.userDao;
 
@@ -21,7 +22,6 @@ import demospringmvc.Entity.lichtap;
 import demospringmvc.Entity.nhanvien;
 import demospringmvc.Entity.chitietgoitap;
 import demospringmvc.Entity.dangkiloptap;
-import demospringmvc.Entity.giaodich;
 import demospringmvc.Entity.khachhang;
 import demospringmvc.Entity.user;
 
@@ -39,8 +39,6 @@ public class HomeService  implements IHomeService{
 	private chitietgoitapDao chitietgoitapDao;
 	@Autowired
 	private dangkiloptapDao dangkiloptapDao;
-	@Autowired
-	private giaodichDao giaodichDao;
 	@Autowired
 	private khachhangDao khachhangDao;
 	@Autowired
@@ -100,8 +98,8 @@ public class HomeService  implements IHomeService{
         nhanvienDao.deleteNhanvien(id);
     }
 
-    public nhanvien findNhanvien(int id) {
-        return nhanvienDao.findNhanvien(id);
+    public List<nhanvien> findNhanvien(String name) {
+        return nhanvienDao.findNhanvien(name);
     }
 	//dangkiloptap
 	public List<dangkiloptap> GetDatadangkiloptap() {
@@ -122,17 +120,7 @@ public class HomeService  implements IHomeService{
     public dangkiloptap findDangkiloptap(int id) {
         return dangkiloptapDao.findDangkiloptap(id);
     }
-	//giaodich
-	public List<giaodich> GetDatagiaodich() {
-		return giaodichDao.GetDatagiaodich();
-	}
-	public giaodich addGiaodich(giaodich gd) {
-        return giaodichDao.addGiaodich(gd);
-    }
 
-    public giaodich findGiaodich(int id) {
-        return giaodichDao.findGiaodich(id);
-    }
 	//khachhang
 	public List<khachhang> GetDatakhachhang() {
 		return khachhangDao.GetDatakhachhang();
@@ -145,8 +133,8 @@ public class HomeService  implements IHomeService{
         return khachhangDao.updateKhachhang(kh);
     }
 
-    public khachhang findKhachhang(int id) {
-        return khachhangDao.findKhachhang(id);
+    public List<khachhang> findKhachhang(String name) {
+        return khachhangDao.findKhachhang(name);
     }
 	//chitietgoitap
 	public List<chitietgoitap> GetDatachitietgoitap() {
@@ -162,5 +150,9 @@ public class HomeService  implements IHomeService{
 
     public chitietgoitap findChitietgoitap(int id) {
         return chitietgoitapDao.findChitietgoitap(id);
+    }
+    
+    public List<chitietgoitap> findChitietgoitapByMonth(int month) {
+    	return chitietgoitapDao.findChitietgoitapByMonth(month);
     }
 }
