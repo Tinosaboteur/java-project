@@ -47,7 +47,7 @@
         <div class="logo">
             <a href="/demospringmvc/admin/trang-chu"><img src="https://th.bing.com/th/id/OIP.OdPrzfwvLlG43KMSdAAEYAHaEV?rs=1&pid=ImgDetMain" alt="logo trang web"></a>
            <form action="/demospringmvc/khachhang/find" method="get" class="search-form">
-                <input type="search" placeholder="Search...." id="customerID" name="customerID">
+                <input type="search" placeholder="Search...." id="name" name="name">
                 <button type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -70,18 +70,20 @@
 	
 	
 	<section class="customer-list">
+    <c:forEach var="item" items="${khachhang}">
         <div class="customer-card">
-        <h2 class="customer-ID">ID: ${khachhang.customerID}</h2>
-            <h2 class="customer-name">Tên khách hàng: ${khachhang.name}</h2>
-            <p class="customer-info">Mã khách hàng: <span>${khachhang.customerID}</span></p>
-            <p class="customer-info">Ngày sinh: <span>${khachhang.dateOfBirth}</span></p>
-            <p class="customer-info">Giới tính: <span>${khachhang.gender}</span></p>
-            <p class="customer-info">SĐT: <span>${khachhang.phoneNumber}</span></p>
-            <p class="customer-info">Địa chỉ: <span>${khachhang.address}</span></p>
-            <p class="customer-info">Email: <span>${khachhang.email}</span></p>
-            <p class="customer-info">Ngày tham gia: <span>${khachhang.joinDate}</span></p>
+        <h2 class="customer-ID">ID: ${item.customerID}</h2>
+            <h2 class="customer-name">Tên khách hàng: ${item.name}</h2>
+            <p class="customer-info">Mã khách hàng: <span>${item.customerID}</span></p>
+            <p class="customer-info">Ngày sinh: <span>${item.dateOfBirth}</span></p>
+            <p class="customer-info">Giới tính: <span>${item.gender}</span></p>
+            <p class="customer-info">SĐT: <span>${item.phoneNumber}</span></p>
+            <p class="customer-info">Địa chỉ: <span>${item.address}</span></p>
+            <p class="customer-info">Email: <span>${item.email}</span></p>
+            <p class="customer-info">Ngày tham gia: <span>${item.joinDate}</span></p>
 
         </div>
+    </c:forEach>
 </section>
 </body>
 </html>

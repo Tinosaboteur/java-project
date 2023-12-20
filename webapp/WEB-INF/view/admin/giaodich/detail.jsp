@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +46,7 @@
         <div class="logo">
             <a href="/demospringmvc/admin/trang-chu"><img src="https://th.bing.com/th/id/OIP.OdPrzfwvLlG43KMSdAAEYAHaEV?rs=1&pid=ImgDetMain" alt="logo trang web"></a>
            <form action="/demospringmvc/giaodich/find" method="get" class="search-form">
-                <input type="search" placeholder="Search...." id="transactionID" name="transactionID">
+                <input type="search" placeholder="Search...." id="startDate" name="startDate">
                 <button type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -68,22 +67,29 @@
         <a class="transaction-link" href="/demospringmvc/giaodich"><h1>Giao Dịch</h1></a>
     </div>
 	
-		<section class="transaction-list">
+<section class="package-list">
+    <c:set var="total" value="0"/>
+    <c:forEach var="chitietgoitap" items="${chitietgoitap}">
         <div class="transaction-card">
-        <h2 class="transaction-ID">ID: ${giaodich.transactionID}</h2>
             <c:forEach var="itemkh" items="${khachhang}">
-                <c:if test="${giaodich.customerID == itemkh.customerID}">
-                    <p class="transaction-info">Mã khách hàng: <span>${itemkh.customerID}</span></p>
+                <c:if test="${chitietgoitap.customerID == itemkh.customerID}">
                     <h2 class="customer-name">Tên khách hàng: ${itemkh.name}</h2>
+                    <p class="package-info">Mã khách hàng: <span>${chitietgoitap.customerID}</span></p>
                 </c:if>
             </c:forEach>
-            
-            <p class="transaction-info">Tổng giao dịch: <span>${giaodich.amount}00 VNĐ</span></p>
-            <p class="transaction-info">Chi tiết: <span>${giaodich.description}</span></p>
-            <p class="transaction-info">Ngày thực hiện giao dịch: <span>${giaodich.transactionDate}</span></p>
-
+            <c:forEach var="itemgt" items="${goitap}">
+                <c:if test="${chitietgoitap.packageID == itemgt.price}">
+                    <p class="package-info">Khách hàng đã đăng ký gói tập trị giá: <span>${itemgt.name}</span></p>
+                    <c:set var="total" value="${total + itemgt.price}"/>
+                </c:if>
+            </c:forEach>
+            <p class="package-info">Ngày thực hiện giao dịch: <span>${chitietgoitap.startDate}</span></p>
         </div>
+    </c:forEach>
 </section>
+    <h2 class="total-revenue"">Tổng doanh thu tháng này: <span>${total} VNĐ</span></h2>
+
+
 
 </body>
 </html>

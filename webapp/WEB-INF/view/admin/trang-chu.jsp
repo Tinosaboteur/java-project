@@ -71,8 +71,7 @@ body {
         </div>
     </header>	
 	
-<div class="grid-container">
-  <div class="grid-item" onclick="window.location.href='/demospringmvc/admin/trang-chu'">Trang Chủ</div>
+<div class="grid-container" >
   <div class="grid-item" onclick="window.location.href='/demospringmvc/chitietgoitap'">Chi Tiết Gói Tập</div>
   <div class="grid-item" onclick="window.location.href='/demospringmvc/dangkyloptap'">Đăng Ký Lớp Tập</div>  
   <div class="grid-item" onclick="window.location.href='/demospringmvc/giaodich'">Giao Dịch</div>

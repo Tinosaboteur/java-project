@@ -97,7 +97,7 @@
         <div class="equipment-card">
             <p class="equipment-info">ID: <span>${item.equipmentID}</span></p>
             <h2 class="equipment-name">Tên thiết bị: ${item.name}</h2>
-            <img class="equipment-img" src="${item.img}" alt="${item.name}">
+            <img class="equipment-img" src="${item.img}" alt="${item.name}" style="width: 300px; height: 300px">
             <p class="equipment-info">Mô tả: <span>${item.description}</span></p>
             <p class="equipment-info">Trạng Thái: <span>${item.status}</span></p>
             <p class="equipment-info">Số lượng: <span>${item.quantity} Cái</span></p>

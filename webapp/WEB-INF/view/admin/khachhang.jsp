@@ -47,7 +47,7 @@
         <div class="logo">
             <a href="/demospringmvc/admin/trang-chu"><img src="https://th.bing.com/th/id/OIP.OdPrzfwvLlG43KMSdAAEYAHaEV?rs=1&pid=ImgDetMain" alt="logo trang web"></a>
            <form action="/demospringmvc/khachhang/find" method="get" class="search-form">
-                <input type="search" placeholder="Search...." id="customerID" name="customerID">
+                <input type="search" placeholder="Search...." id="name" name="name">
                 <button type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>

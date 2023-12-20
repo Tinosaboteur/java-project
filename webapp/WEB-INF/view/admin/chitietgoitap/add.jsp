@@ -86,7 +86,7 @@
 	
 	
 <h1>Thêm Chi Tiết Gói Tập</h1>
-<form action="/demospringmvc/chitietgoitap/add" method="post">
+<form action="/demospringmvc/chitietgoitap/add" method="post" id="myForm">
     <label for="customerID">Mã khách hàng:</label>
     <select id="customerID" name="customerID">
         <c:forEach var="item" items="${khachhang}">

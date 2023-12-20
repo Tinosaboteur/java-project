@@ -68,7 +68,7 @@
         <div class="logo">
             <a href="/demospringmvc/admin/trang-chu"><img src="https://th.bing.com/th/id/OIP.OdPrzfwvLlG43KMSdAAEYAHaEV?rs=1&pid=ImgDetMain" alt="logo trang web"></a>
            <form action="/demospringmvc/nhanvien/find" method="get" class="search-form">
-                <input type="search" placeholder="Search...." id="employeeID" name="employeeID">
+                <input type="search" placeholder="Search...." id="name" name="name">
                 <button type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -90,19 +90,21 @@
     </div>
 	
 	<section class="employee-list">
+    <c:forEach var="item" items="${nhanvien}">
         <div class="employee-card">
-        <h2 class="employee-ID">ID: ${nhanvien.employeeID}</h2>
-            <h2 class="employee-name">Tên nhân viên: ${nhanvien.name}</h2>
-            <p class="employee-info">Vị trí làm việc: <span>${nhanvien.position}</span></p>
-            <p class="employee-info">SĐT: <span>${nhanvien.phoneNumber}</span></p>
-            <p class="employee-info">Email: <span>${nhanvien.email}</span></p>
-            <p class="employee-info">Mức lương: <span>${nhanvien.salary}VNĐ</span></p>
-            <p class="employee-info">Ngày vào làm: <span>${nhanvien.startDate}</span></p>
+        	<h2 class="employee-ID">ID: ${item.employeeID}</h2>
+            <h2 class="employee-name">Tên nhân viên: ${item.name}</h2>
+            <p class="employee-info">Vị trí làm việc: <span>${item.position}</span></p>
+            <p class="employee-info">SĐT: <span>${item.phoneNumber}</span></p>
+            <p class="employee-info">Email: <span>${item.email}</span></p>
+            <p class="employee-info">Mức lương: <span>${item.salary}VNĐ</span></p>
+            <p class="employee-info">Ngày vào làm: <span>${item.startDate}</span></p>
             <form action="/demospringmvc/nhanvien/delete" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');">
-                <input type="hidden" name="employeeID" value="${nhanvien.employeeID}">
+                <input type="hidden" name="employeeID" value="${item.employeeID}">
                 <input type="submit" value="Xóa">
             </form>
         </div>
+    </c:forEach>
 </section>
 
 </body>
